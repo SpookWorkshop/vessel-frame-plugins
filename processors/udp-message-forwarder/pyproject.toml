@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "udp-message-forwarder"
+version = "0.0.0"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.entry-points."vesselframe.plugins.messageprocessors"]
+udp_message_forwarder = "udp_message_forwarder:make_plugin"
+
+[project.entry-points."vesselframe.config.schemas"]
+udp_message_forwarder = "udp_message_forwarder:get_config_schema"

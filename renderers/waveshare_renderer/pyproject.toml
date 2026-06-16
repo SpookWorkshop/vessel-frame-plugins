@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "waveshare-renderer"
+version = "0.0.0"
+requires-python = ">=3.10"
+dependencies = ["pillow>=12.0.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.entry-points."vesselframe.plugins.renderer"]
+waveshare_renderer = "waveshare_renderer:make_plugin"
+
+[project.entry-points."vesselframe.config.schemas"]
+waveshare_renderer = "waveshare_renderer:get_config_schema"
