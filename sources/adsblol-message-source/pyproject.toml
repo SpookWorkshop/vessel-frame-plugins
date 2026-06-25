@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adsblol-message-processor"
+version = "0.0.0"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.27",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.entry-points."vesselframe.plugins.messageprocessors"]
+adsblol_message_processor = "adsblol_message_processor:make_plugin"
+
+[project.entry-points."vesselframe.config.schemas"]
+adsblol_message_processor = "adsblol_message_processor:get_config_schema"
